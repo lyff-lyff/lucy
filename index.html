@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>欢迎来到小鹿官网</title>
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+    <!-- <middle>里面
+    background-repeat: no-repeat;
+    上面这个是背景不要重复
+
+      background-size: cover;
+      -webkit-background-size: cover;
+      -o-background-size: cover;
+    上面三句是一个意思，就是让图片随屏幕大小同步缩放，
+    但是有部分可能会被裁切，不过不至于会露白，
+    下面两句是为chrome和opera浏览器作兼容-->
+    <style>
+        .all
+        {
+            width:100%;
+        }
+        .top
+        {
+            background-color: white;
+            height:100px;
+            width:100%;
+            margin:auto;
+        }
+        .middle
+        {
+            height:800px;
+            width:100%;
+            background-image:url("img/tu_7.jpg");
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            position:relative;/*确保middle—kuang与上面的距离*/
+
+        }
+        .top div
+        {
+            float:left;
+        }
+        .bottom
+        {
+            background-color: white;
+            height:50px;
+            width:100%;
+        }
+        .top_left
+        {
+            height:100px;
+            width:50%;
+        }
+        .top_right
+        {
+            height:100px;
+            width:50%;
+            float:right;
+        }
+        .top_left_text
+        {
+            text-align:center;
+            color:red;
+            font-size:23px;
+            font-style:italic;
+            margin-top:30px;
+            padding:0px;
+        }
+        .top_right_text
+        {
+            text-align:center;
+            font-size:20px;
+            font-style:italic;
+            color:black;
+        }
+        .top_right_text1
+        {
+            text-align:right;
+            font-size:20px;
+            font-style:italic;
+            color:black;
+        }
+        .middle_kuang
+        {
+            margin-bottom:50px;
+            margin-left:200px;
+            height:400px;
+            width:300px;
+            background-color: white;
+            position:absolute;
+            top:50px;
+        }
+        .bottom_text
+        {
+            text-align:center;
+        }
+        a:link{color:black;}
+        a:active{color:red;}
+        /*作为参数的div*/
+        .kuang_bottom
+        {
+            height:50px;
+            width:300px;
+            background-color:white;
+        }
+    </style>
+<body>
+<div class="back">
+    <div class="all">
+<div class="left-img need-height">
+			<img src="img/0.jpg" class="img-show"/>
+			<img src="img/1.jpg" class="img-hidden"/>
+			<img src="img/2.jpg" class="img-hidden"/>
+			<img src="img/3.jpg" class="img-hidden"/>
+			<img src="img/4.jpg" class="img-hidden"/>
+			<img src="img/5.jpg" class="img-hidden"/>
+			<img src="img/6.jpg" class="img-hidden"/>
+			<img src="img/7.jpg" class="img-hidden"/>
+			<img src="img/8.jpg" class="img-hidden"/>
+			<img src="img/9.jpg" class="img-hidden"/>
+			<img src="img/10.jpg" class="img-hidden"/>
+		</div>
+        <div class="top">
+            <div class="top_left">
+                <pre class="top_left_text">热烈欢迎</pre>
+                <p align="center" margin-bottom:20px><small>全球独家 值得拥有</small></p></div>
+            <div class="top_right">
+                <pre class="top_right_text"><b>〄试一试  ->炫酷绘画板   ->点击下面的按钮</b></pre>
+                <a  class="top_right_text1"  href="https://lyff-lyff.github.io/luyyds/" target="_blank" style="text-decoration:none;">我是按钮</a>
+            </div>
+
+        </div>
+
+
+        <div class="middle">
+            <div class="middle_kuang">
+                <pre><button  type="butotn" onclick="a_1()" ><b>           扫码登录         </b>|<button type="button"  onclick="a_2()" ><b>         账户登录           </b></button></pre><hr>
+                <div id="change" style="width:280px;height:300px;margin:10px"></div>
+
+
+
+                <div class="kuang_bottom">
+					<a  text-align:right  href="login.html" target="_blank" style="text-decoration:none;">☹☹☹☹  还没账号？点击注册！☺☺☺☺</a>
+                    <pre class="bottom_text"><b>新浪微博   QQ  支付宝  更多   免费注册</b></pre>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom">
+            <pre class="bottom_text">Copyright 2008-2018 vip.com. All Rights Reserved ICP证：粤B2-20080329</pre>
+        </div>
+    </div>
+</div>
+<script>
+
+    //扫码登录
+    function a_1(){
+        var div1=document.getElementById('change');
+        document.getElementById("change").innerHTML = "";
+        var photo=document.createElement("img");
+        var p=document.createElement("p");
+        var node= document.createTextNode("亲！打开手机QQ扫一扫，加我好友");
+        p.style.color="red"
+        p.appendChild(node);
+
+
+
+
+        photo.src="img/qq.png";//此处不能用单引号
+        photo.height="260";//不用加px
+        photo.width="220";
+        photo.style.marginLeft="30px"
+
+        div1.appendChild(photo)
+        div1.appendChild(p)
+    }
+
+
+    //账号登录
+    function a_2(){
+        var div2=document.getElementById('change');
+        document.getElementById("change").innerHTML = "";//一次性清楚这个div里面的所有东西
+        var text1 = document.createElement("input" );
+        var text2 = document.createElement("input");
+        var checkBox=document.createElement("input");
+        var bt=document.createElement("input")
+
+        var p1=document.createElement("p");
+        var node1= document.createTextNode("记住用户名");
+        p1.appendChild(node1);
+
+        var p2=document.createElement("p");
+        var node2= document.createTextNode("忘记密码");
+        p2.appendChild(node2);
+
+        checkBox.setAttribute("type","checkbox");//样式替换
+        text1.setAttribute("type","text");
+        text2.setAttribute("type","password");//用原点代替输入的密码
+        bt.setAttribute("type","button");
+
+        text1.style.cssText='height:25px;width:235px'
+        text1.style.marginLeft="20px"
+        text1.style.marginTop="30px";
+        text1.placeholder="☺请输入账号"
+        text1.id="t1";
+
+
+        text2.style.cssText='height:25px;width:235px;color:red'
+        text2.style.marginLeft="20px"
+        text2.style.marginTop="20px";
+        text2.placeholder="☹请输入密码";//设置文本框中的透明字属性（不加style）
+        text2.id="t2";
+
+        checkBox.style.marginLeft="20px"
+        checkBox.style.marginTop="40px"
+        checkBox.style.float="left"
+
+        p1.style.float="left"//为了让复选框和p1在同一地方
+        p1.style.marginTop="35px"
+        p1.style.marginLeft="0px"
+
+        p2.style.float="right"
+        p2.style.marginTop="35px"
+        p2.style.marginRight="20px"
+
+
+        bt.value="登录"//将文字显示在按钮上
+        bt.style.cssText='height:30px;width:220px'
+        bt.style.marginTop="40px"
+        bt.style.marginLeft="20px"
+        bt.style.backgroundColor="#11c2aa"
+
+        //按登录按钮后进入check（）函数
+
+        div2.appendChild(text1)
+        div2.appendChild(text2)
+        div2.appendChild(checkBox)
+
+        div2.appendChild(p1)
+        div2.appendChild(p2)
+        div2.appendChild(bt)
+        //实验按钮点击时的跳转
+        bt.onclick=function(){
+            login();
+        }
+
+    }
+
+
+
+
+
+    
+    	//轮播图
+	    	var cur=0;
+	    	var $img=$("img");
+	    	$img.eq(0).fadeIn();
+	    	function lunbo(){
+	    			$img.eq(cur).fadeIn(500).siblings().hide();
+					cur++;
+					cur = cur >= $img.length ? 0:cur;
+					auto=setTimeout(lunbo,4000);
+	    	}
+	    	lunbo();
+
+</script>
+<script src="js/Bmob-2.2.4.min.js"></script>
+  <script>
+  	Bmob.initialize("5858089de80c34b1", "123456");
+  	Bmob.debug(true);
+	function login(){
+		 Bmob.User.login(document.getElementById("t1").value,document.getElementById("t2").value).then(res => {
+		   location.href="https://lyff-lyff.github.io/lu/";
+		 }).catch(err => {
+		  alert(err.error)
+		});
+	}
+	
+	
+	</script>
+</body>
+</head>
+</html>
+<!-- $(":input[name=password]").attr("type","text").val("*******");//类似这样的 -->
+<!-- 上面的含义是:所有input中name属性值是password的input将它的type属性改为text，然后设置其值为********; -->
+
+<!-- 其他的都是类似的,你可以根据需要自己修改 -->
