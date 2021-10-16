@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>小鹿注册官网</title>
+<script type="text/javascript" src="js/jquery-1.11.2.js"></script>
+<script src="js/Bmob-2.2.4.min.js"></script>
+    <style>
+        .all
+        {
+            width:100%;
+        }
+        .top
+        {
+            background-color: white;
+            height:100px;
+            width:100%;
+            margin:auto;
+        }
+        .middle
+        {
+            height:1580px;
+            width:100%;
+            background-image:url("img/tu_7.jpg");
+            background-repeat: no-repeat;
+            -webkit-background-size: cover;
+            position:relative;/*确保middle—kuang与上面的距离*/
+
+        }
+        .top div
+        {
+            float:left;
+        }
+        .bottom
+        {
+            background-color: white;
+            height:50px;
+            width:100%;
+        }
+        .top_left
+        {
+            height:100px;
+            width:100%;
+        }
+        .top_right
+        {
+            height:100px;
+            width:50%;
+            float:right;
+        }
+        .top_left_text
+        {
+            text-align:center;
+            color:red;
+            font-size:23px;
+            font-style:italic;
+            margin-top:30px;
+            padding:0px;
+        }
+        .top_right_text
+        {
+            text-align:center;
+            font-size:20px;
+            font-style:italic;
+            color:black;
+        }
+        .top_right_text1
+        {
+            text-align:right;
+            font-size:20px;
+            font-style:italic;
+            color:black;
+        }
+        .middle_kuang
+        {
+            margin-bottom:50px;
+            margin-left:350px;
+            height:400px;
+            width:300px;
+            background-color: white;
+            position:absolute;
+            top:200px;
+        }
+        .bottom_text
+        {
+            text-align:center;
+        }
+        a:link{color:black;}
+        a:active{color:red;}
+        /*作为参数的div*/
+        .kuang_bottom
+        {
+            height:50px;
+            width:300px;
+            background-color:white;
+        }
+    </style>
+<body>
+<div class="back">
+    <div class="all">
+
+        <div class="top">
+            <div class="top_left">
+                <pre class="top_left_text">热烈欢迎</pre>
+                <p align="right"   ><small font-size:50px>全球独家 值得拥有</small></p></div>
+            
+
+        </div>
+
+
+        <div class="middle">
+            <div class="middle_kuang">
+                <pre> <button type="button"  onclick="a_2()" ><b>         账户注册   请点击此按钮进行注册           </b></button></pre><hr>
+                <div id="change" style="width:280px;height:300px;margin:10px"></div>
+
+
+
+                <div class="kuang_bottom">
+                    <pre class="bottom_text"><b>新浪微博   QQ  支付宝  更多   免费注册</b></pre>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="bottom">
+            <pre class="bottom_text">Copyright 2008-2018 vip.com. All Rights Reserved ICP证：粤B2-20080329</pre>
+        </div>
+    </div>
+</div>
+<script>
+
+    //账号登录
+    function a_2(){
+        var div2=document.getElementById('change');
+        document.getElementById("change").innerHTML = "";//一次性清楚这个div里面的所有东西
+        var text1 = document.createElement("input" );
+        var text2 = document.createElement("input");
+        var checkBox=document.createElement("input");
+        var bt=document.createElement("input")
+
+        var p1=document.createElement("p");
+        var node1= document.createTextNode("记住用户名");
+        p1.appendChild(node1);
+
+        var p2=document.createElement("p");
+        var node2= document.createTextNode("忘记密码");
+        p2.appendChild(node2);
+
+        checkBox.setAttribute("type","checkbox");//样式替换
+        text1.setAttribute("type","text");
+        text2.setAttribute("type","password");//用原点代替输入的密码
+        bt.setAttribute("type","button");
+
+        text1.style.cssText='height:25px;width:235px'
+        text1.style.marginLeft="20px"
+        text1.style.marginTop="30px";
+        text1.placeholder="☺QQ/手机号/邮箱"
+        text1.id="t1";
+
+
+        text2.style.cssText='height:25px;width:235px;color:red'
+        text2.style.marginLeft="20px"
+        text2.style.marginTop="20px";
+        text2.placeholder="☹请输入密码";//设置文本框中的透明字属性（不加style）
+        text2.id="t2";
+
+        checkBox.style.marginLeft="20px"
+        checkBox.style.marginTop="40px"
+        checkBox.style.float="left"
+
+        p1.style.float="left"//为了让复选框和p1在同一地方
+        p1.style.marginTop="35px"
+        p1.style.marginLeft="0px"
+
+        p2.style.float="right"
+        p2.style.marginTop="35px"
+        p2.style.marginRight="20px"
+
+
+        bt.value="注册"//将文字显示在按钮上
+        bt.style.cssText='height:30px;width:220px'
+        bt.style.marginTop="40px"
+        bt.style.marginLeft="20px"
+        bt.style.backgroundColor="#11c2aa"
+
+        //按登录按钮后进入check（）函数
+
+        div2.appendChild(text1)
+        div2.appendChild(text2)
+        div2.appendChild(checkBox)
+
+        div2.appendChild(p1)
+        div2.appendChild(p2)
+        div2.appendChild(bt)
+        //实验按钮点击时的跳转
+        bt.onclick=function(){
+            register();
+        }
+
+    }
+    	//轮播图
+</script>
+<script>
+	Bmob.initialize("5858089de80c34b1", "123456");
+	Bmob.debug(true);
+	function register(){
+		let params={
+			username:document.getElementById("t1").value,
+			password:document.getElementById("t2").value
+		}
+		Bmob.User.register(params).then(res => {
+		   location.href="index.html";
+		 }).catch(err => {
+		  alert(err.error);
+		});
+	}
+  </script>
+</body>
+</head>
+</html>
+<!-- $(":input[name=password]").attr("type","text").val("*******");//类似这样的 -->
+<!-- 上面的含义是:所有input中name属性值是password的input将它的type属性改为text，然后设置其值为********; -->
+
+<!-- 其他的都是类似的,你可以根据需要自己修改 -->
